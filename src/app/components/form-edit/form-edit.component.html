@@ -1,0 +1,112 @@
+<div class="grid-container">
+    <div class="item1">
+        <h1>แก้ไขข้อมูลสมาชิก</h1>
+        <mat-card class="example-card">
+            <div style="text-align: end;">
+                <button (click)="onResetPassword()" type="button" class="btn btn-outline-danger"><i
+                        class="bi bi-arrow-clockwise"></i>Re-Password</button>
+            </div>
+            <form #editForm="ngForm" (ngSubmit)="onSubmit()" *ngIf="userData[0]">
+                <div class=" bt-form">
+                    <label for="user_id">รหัสพนักงาน</label>
+                    <input id="user_id" name="user_id" class="form-control" ngModel [(ngModel)]="userData[0].user_id"
+                        type="text" placeholder="รหัสพนักงาน">
+                </div>
+                <div class="bt-form">
+                    <label for="name">ชื่อ-สกุล</label>
+                    <!--   <input id="name" name="name" class="form-control" ngModel [(ngModel)]="userData[0].name" type="text" placeholder="ชื่อ-สกุล"> -->
+                    <input id="name" name="name" class="form-control" ngModel [(ngModel)]="userData[0].name" required
+                        #name="ngModel" type="text" placeholder="ชื่อ-สกุล">
+                    <div *ngIf="name.invalid && (name.dirty || name.touched)">
+                        <div *ngIf="name.errors?.['required']" class="alert-danGer ">
+                            กรุณาป้อน ชื่อ-สกุล
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--     
+    <div class="col-md-8 bt-form">
+        <label for="user_id">รหัสพนักงาน</label>
+        <input id="user_id" name="user_id" class="form-control" minlength="6" maxlength="6" ngModel
+            [(ngModel)]="userData[0].user_id" required #user_id="ngModel" type="text" placeholder="รหัสพนักงาน">
+
+        <div *ngIf="user_id.invalid && (user_id.dirty || user_id.touched)">
+            <div *ngIf="user_id.errors?.['required']" class="alert-danGer">
+                กรุณาป้อน รหัสพนักงาน
+            </div>
+            <div *ngIf="user_id.errors?.['minlength']" class="alert-worNing">
+                กรุณาป้อน ให้ครบ 6 หลัก
+            </div>
+        </div>
+    </div> -->
+
+                <!-- <div class="col-md-8 bt-form" style="display: flex;">
+        <label for="gender">เพศ</label>
+        <div class="form-check al-rigth">
+            <input class="form-check-input" ngModel [(ngModel)]="userData[0].gender" required #gender="ngModel"
+                name="gender" value="1" type="radio" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+                ชาย
+            </label>
+        </div>
+        <div class="form-check al-rigth">
+            <input class="form-check-input" ngModel [(ngModel)]="userData[0].gender" required #gender="ngModel"
+                name="gender" value="2" type="radio" id="flexRadioDefault2">
+            <label class="form-check-label" for="flexRadioDefault2">
+                หญิง
+            </label>
+        </div>
+        <div *ngIf="gender.invalid && (gender.dirty || gender.touched)">
+            <div *ngIf="gender.errors?.['required']" class="alert-danGer">
+                กรุณาเลือก
+            </div>
+        </div>
+    </div> -->
+
+                <!-- <div class="col-md-8 bt-form">
+        <label for="status">สถานะผู้ใช้งาน</label>
+        <select class="form-select" name="status" [(ngModel)]="userData[0].status" required>
+            <option value="">-กรุณาเลือก-</option>
+            <option value="admin">Admin</option>
+            <option value="user">User</option>
+        </select>
+
+        <div *ngIf="status.invalid && (status.dirty || status.touched)">
+            <div *ngIf="status.errors?.['required']" class="alert-danGer">
+                กรุณาเลือก
+            </div>
+        </div>
+    </div> -->
+                <div class="bt-form">
+                    <label for="status">สถานะผู้ใช้งาน</label>
+                    <select class="form-select" name="status" ngModel [(ngModel)]="userData[0].role" required
+                        #status="ngModel">
+                        <option value="">-กรุณาเลือก-</option>
+                        <option value="1" [selected]="userData[0].role == '1'">admin</option>
+                        <option value="0" [selected]="userData[0].role == '0'">user</option>
+                    </select>
+
+                    <div *ngIf="status.invalid && (status.dirty || status.touched)">
+                        <div *ngIf="status.errors?.['required']" class="alert-danGer">
+                            กรุณาเลือก
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+                <div class="col-12" style="display: flex;">
+                    <div>
+                        <button class="btn btn-success" [disabled]="!editForm.form.valid"
+                            type="submit">แก้ไขข้อมูลสมาชิก</button>
+                    </div>
+                    <div style="margin-left: 5%;">
+                        <button type="button" (click)="cancelUser()"
+                            class="btn btn-outline-danger">ยกเลิกสมาชิก</button>
+                    </div>
+                </div>
+
+            </form>
+        </mat-card>
+    </div>
+</div>

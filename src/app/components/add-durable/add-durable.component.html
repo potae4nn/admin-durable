@@ -1,0 +1,124 @@
+<div class="grid-container">
+    <div class="item1">
+        <h1>เพิ่มครุภัณฑ์</h1>
+        <mat-card class="example-card">
+            <form #userForm="ngForm" (ngSubmit)="onSubmit()">
+                <div class=" bt-form">
+                    <label for="name">ชื่อครุภัณฑ์</label>
+                    <input id="name" name="name" class="form-control" ngModel [(ngModel)]="durable.name" required
+                        #name="ngModel" type="text" placeholder="ชื่อครุภัณฑ์">
+                    <div *ngIf="name.invalid && (name.dirty || name.touched)">
+                        <div *ngIf="name.errors?.['required']" class="alert-danGer ">
+                            กรุณาป้อน ชื่อครุภัณฑ์
+                        </div>
+                    </div>
+                </div>
+                <div class=" bt-form subform">
+                    <label for="durable_id">รหัสครุภัณฑ์</label>
+                    <input id="durable_id" name="durable_id" class="form-control" ngModel
+                        [(ngModel)]="durable.durable_id" required #durable_id="ngModel" type="text"
+                        placeholder="รหัสครุภัณฑ์">
+                    <div *ngIf="durable_id.invalid && (durable_id.dirty || durable_id.touched)">
+                        <div *ngIf="durable_id.errors?.['required']" class="alert-danGer ">
+                            กรุณาป้อน รหัสครุภัณฑ์
+                        </div>
+                    </div>
+                </div>
+                <div class=" bt-form subform">
+                    <label for="model">รุ่น/แบบ</label>
+                    <input id="model" name="model" class="form-control" ngModel [(ngModel)]="durable.model" required
+                        #model="ngModel" type="text" placeholder="รุ่น/แบบ">
+                    <div *ngIf="model.invalid && (model.dirty || model.touched)">
+                        <div *ngIf="model.errors?.['required']" class="alert-danGer ">
+                            กรุณาป้อน รุ่น/แบบ
+                        </div>
+                    </div>
+                </div>
+                <div class=" bt-form subform">
+                    <label for="serial_no">Serial No.</label>
+                    <input id="serial_no" name="serial_no" class="form-control" ngModel [(ngModel)]="durable.serial_no"
+                        required #serial_no="ngModel" type="text" placeholder="Serial No.">
+                    <div *ngIf="serial_no.invalid && (serial_no.dirty || serial_no.touched)">
+                        <div *ngIf="serial_no.errors?.['required']" class="alert-danGer ">
+                            กรุณาป้อน Serial No
+                        </div>
+                    </div>
+                </div>
+                <div class="bt-form">
+                    <label for="building">อาคารที่จัดเก็บครุภัณฑ์</label>
+                    <input id="building" name="building" class="form-control" ngModel [(ngModel)]="durable.building"
+                        required #building="ngModel" type="text" placeholder="อาคารที่จัดเก็บครุภัณฑ์">
+                    <div *ngIf="building.invalid && (building.dirty || building.touched)">
+                        <div *ngIf="building.errors?.['required']" class="alert-danGer ">
+                            กรุณาป้อน อาคารที่จัดเก็บครุภัณฑ์
+                        </div>
+                    </div>
+                </div>
+                <div class="bt-form subform">
+                    <label for="location">ห้องที่จัดเก็บ</label>
+                    <input id="location" name="location" class="form-control" ngModel [(ngModel)]="durable.location"
+                        required #location="ngModel" type="text" placeholder="ห้องที่จัดเก็บ">
+                    <div *ngIf="location.invalid && (location.dirty || location.touched)">
+                        <div *ngIf="location.errors?.['required']" class="alert-danGer ">
+                            กรุณาป้อน ห้องที่จัดเก็บ
+                        </div>
+                    </div>
+                </div>
+                <div class=" bt-form subform">
+                    <label for="office">งานที่จัดเก็บ</label>
+                    <input id="office" name="office" class="form-control" ngModel [(ngModel)]="durable.office" required
+                        #office="ngModel" type="text" placeholder="งานที่จัดเก็บ">
+                    <div *ngIf="office.invalid && (office.dirty || office.touched)">
+                        <div *ngIf="office.errors?.['required']" class="alert-danGer ">
+                            กรุณาป้อน งานที่จัดเก็บ
+                        </div>
+                    </div>
+                </div>
+                <div class="bt-form">
+                    <label for="user_id">ผู้รับผิดชอบ</label>
+                    <select class="form-select" name="user_id" ngModel [(ngModel)]="durable.user_id" required
+                        #user_id="ngModel">
+                        <option value="">-กรุณาเลือก-</option>
+                        <option *ngFor="let user of users" [value]="user.user_id">{{user.name}}</option>
+                    </select>
+                    <!-- <input id="password" name="password" class="form-control" minlength="6" ngModel [(ngModel)]="user.password" required #password="ngModel" type="text" placeholder="รหัสผ่าน"> -->
+                    <div *ngIf="user_id.invalid && (user_id.dirty || user_id.touched)">
+                        <div *ngIf="user_id.errors?.['required']" class="alert-danGer">
+                            กรุณาเลือก
+                        </div>
+                    </div>
+                </div>
+                <div class="bt-form">
+                    <label for="fiscal_year">ปีงบประมาณ</label>
+                    <input id="fiscal_year" name="fiscal_year" minlength="4" maxlength="4" class="form-control" ngModel
+                        [(ngModel)]="durable.fiscal_year" required #fiscal_year="ngModel" type="text"
+                        placeholder="ปีงบประมาณ">
+                    <div *ngIf="fiscal_year.invalid && (fiscal_year.dirty || fiscal_year.touched)">
+                        <div *ngIf="fiscal_year.errors?.['required']" class="alert-danGer ">
+                            กรุณาป้อน ปีงบประมาณ
+                        </div>
+                        <div *ngIf="fiscal_year.errors?.['minlength']" class="alert-worNing">
+                            กรุณาป้อน ให้ครบ 4 หลัก
+                        </div>
+                    </div>
+                </div>
+                <div class="bt-form">
+                    <label for="price">ราคาครุภัณฑ์</label>
+                    <input id="price" name="price" class="form-control" ngModel [(ngModel)]="durable.price" required
+                        #price="ngModel" type="number" placeholder="ราคาครุภัณฑ์">
+                    <div *ngIf="price.invalid && (price.dirty || price.touched)">
+                        <div *ngIf="price.errors?.['required']" class="alert-danGer ">
+                            กรุณาป้อน ราคาครุภัณฑ์
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="col-12">
+                    <button class="btn btn-success" [disabled]="!userForm.form.valid"
+                        type="submit">เพิ่มครุภัณฑ์</button>
+                </div>
+                <br><br>
+            </form>
+        </mat-card>
+    </div>
+</div>

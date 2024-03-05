@@ -1,0 +1,92 @@
+<div class="grid-container">
+    <div class="item1">
+        <h1>เพิ่มสมาชิก</h1>
+        <mat-card class="example-card">
+        <form #userForm="ngForm" (ngSubmit)="onSubmit()">
+            <div class=" bt-form">
+                <label for="name">ชื่อ-สกุล</label>
+                <input id="name" name="name" class="form-control" ngModel [(ngModel)]="user.name" required
+                    #name="ngModel" type="text" placeholder="ชื่อ-สกุล">
+                <div *ngIf="name.invalid && (name.dirty || name.touched)">
+                    <div *ngIf="name.errors?.['required']" class="alert-danGer ">
+                        กรุณาป้อน ชื่อ-สกุล
+                    </div>
+                </div>
+            </div>
+            <div class=" bt-form">
+                <label for="user_id">รหัสพนักงาน</label>
+                <input id="user_id" name="user_id" class="form-control" minlength="6" maxlength="6" ngModel
+                    [(ngModel)]="user.user_id" required #user_id="ngModel" type="text" placeholder="รหัสพนักงาน">
+
+                <div *ngIf="user_id.invalid && (user_id.dirty || user_id.touched)">
+                    <div *ngIf="user_id.errors?.['required']" class="alert-danGer">
+                        กรุณาป้อน รหัสพนักงาน
+                    </div>
+                    <div *ngIf="user_id.errors?.['minlength']" class="alert-worNing">
+                        กรุณาป้อน ให้ครบ 6 หลัก
+                    </div>
+                </div>
+            </div>
+
+            <div class=" bt-form">
+                <label for="password">รหัสผ่าน</label>
+                <input id="password" name="password" class="form-control" minlength="6" ngModel
+                    [(ngModel)]="user.password" required #password="ngModel" type="text" placeholder="รหัสผ่าน">
+
+                <div *ngIf="password.invalid && (password.dirty || password.touched)">
+                    <div *ngIf="password.errors?.['required']" class="alert-danGer">
+                        กรุณาป้อน รหัสผ่าน
+                    </div>
+                    <div *ngIf="password.errors?.['minlength']" class="alert-worNing">
+                        กรุณาป้อน อย่างน้อย 6 หลัก
+                    </div>
+                </div>
+            </div>
+
+            <div class=" bt-form" style="display: flex;">
+                <label for="gender">เพศ</label>
+                <div class="form-check al-rigth">
+                    <input class="form-check-input" ngModel [(ngModel)]="user.gender" required #gender="ngModel"
+                        name="gender" value="1" type="radio" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        ชาย
+                    </label>
+                </div>
+                <div class="form-check al-rigth">
+                    <input class="form-check-input" ngModel [(ngModel)]="user.gender" required #gender="ngModel"
+                        name="gender" value="2" type="radio" id="flexRadioDefault2">
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        หญิง
+                    </label>
+
+                </div>
+                <div *ngIf="gender.invalid && (gender.dirty || gender.touched)">
+                    <div *ngIf="gender.errors?.['required']" class="alert-danGer">
+                        กรุณาเลือก
+                    </div>
+                </div>
+            </div>
+            <div class="bt-form">
+                <label for="role">สถานะผู้ใช้งาน</label>
+                <select class="form-select" name="role" ngModel [(ngModel)]="user.role" required #role="ngModel">
+                    <option value="">-กรุณาเลือก-</option>
+                    <option value="1">Admin</option>
+                    <option value="0">User</option>
+                </select>
+                <!-- <input id="password" name="password" class="form-control" minlength="6" ngModel [(ngModel)]="user.password" required #password="ngModel" type="text" placeholder="รหัสผ่าน"> -->
+
+                <div *ngIf="role.invalid && (role.dirty || role.touched)">
+                    <div *ngIf="role.errors?.['required']" class="alert-danGer">
+                        กรุณาเลือก
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <div class="col-12">
+                <button class="btn btn-success" [disabled]="!userForm.form.valid" type="submit">เพิ่มสมาชิก</button>
+            </div>
+        </form>
+    </mat-card>
+    </div>
+</div>

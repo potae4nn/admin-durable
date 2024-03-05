@@ -1,1 +1,131 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    font-family: 'Kanit', sans-serif !important;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.mat-list-item {
+    font-family: 'Kanit', sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+}
+
+.mat-expansion-panel-header {
+    font-family: 'Kanit', sans-serif !important;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.mat-h1,
+.mat-headline,
+.mat-typography .mat-h1,
+.mat-typography .mat-headline,
+.mat-typography h1,h2,
+.mat-form-field,
+.mat-button-toggle,
+.mat-card,
+.mat-option {
+    font-family: 'Kanit', sans-serif !important;
+}
+
+table.dataTable.hover tbody tr:hover,
+table.dataTable.display tbody tr:hover {
+    cursor: pointer !important;
+}
+
+/* input[type="search"] {
+    width: 845px;
+    padding-right: 20px;
+    height: 48px;
+    padding-left: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+
+.ip-search{
+    margin-left: -12px;
+    width: 90px;
+    margin-top: -4px;
+    border-radius: 0rem 0.25rem 0.25rem 0rem;
+    -webkit-appearance: none;
+} */
+
+.color {
+    background: #ff7600;
+    color: white;
+}
+
+.align-self-end {
+    padding-left: 22%;
+}
+
+.pagination {
+    justify-content: right;
+}
+
+.page-link{
+    cursor: pointer;
+}
+
+th{
+    cursor: pointer;
+}
+
+.success{
+    color: #39ec39;
+    /* color: honeydew; */
+}
+
+.worning{
+    color: rgb(207, 192, 58);
+    /* color: honeydew; */
+}
+
+.error{
+    color: rgb(236, 131, 10);
+    /* color: honeydew; */
+}
+
+.lost{
+    color: rgb(255, 0, 0);
+    /* color: honeydew; */
+}
+
+.modal {
+    background: #d6dce282 !important;
+}
+
+element.style {
+    border-radius: 10px!important;
+}
+.modal-content {
+    background-color: #373839 !important;
+}
+
+.grid-container {
+    display: grid;
+    margin: 20px;
+}
+
+.item1 {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+  .table{
+    color:aliceblue;
+  }

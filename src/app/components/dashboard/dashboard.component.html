@@ -1,0 +1,54 @@
+<div class="grid-container">
+    <div class="item1">
+        <h1>กราฟสรุปครุภัณฑ์ทั้งหมด</h1>
+        <mat-form-field appearance="fill">
+            <mat-label>กรุณาเลือกปี :</mat-label>
+            <mat-select>
+                <mat-option #yearChange *ngFor="let yearSel of yearArray" [value]="yearSel"
+                    (click)="onYearChange(yearChange)">
+                    {{yearSel+543}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <button style="margin: 10px;" (click)="onRefresh()" mat-mini-fab color="primary">
+            <mat-icon>refresh</mat-icon>
+        </button>
+        <div class="card-durable">
+            <mat-card class="card-chart">
+                <mat-card-title>สำรวจตามสถานะครุภัณฑ์</mat-card-title>
+                <mat-card-content class="card-content">
+                    <canvas id="canvas" style="position: relative;" height="400vw" width="500vw"></canvas>
+                </mat-card-content>
+            </mat-card>
+            <mat-card class="card-chart">
+                <mat-card-title>รายการสำรวจ</mat-card-title>
+                <mat-card-content class="card-content">
+                    <canvas id="canvas2" style="margin-top: -9px; margin-left: 36px;" height="400vw"
+                        width="400vw"></canvas>
+                </mat-card-content>
+            </mat-card>
+            <mat-card class="card-chart">
+                <mat-card class="card-total" *ngIf="dataDurableCount">
+                    <mat-card-title>รวมครุภัณฑ์ทั้งหมด</mat-card-title>
+                    <mat-card-content class="card-content">
+                        <h1 class="font-content">{{dataDurableCount.count.countDurable}} </h1>
+                        <h2 style="color: gray; text-align: end;">รายการ</h2>
+                    </mat-card-content>
+                </mat-card>
+                <mat-card class="card-total" *ngIf="dataDurableCount">
+                    <mat-card-title>รวมราคาครุภัณฑ์</mat-card-title>
+                    <mat-card-content class="card-content">
+                        <h1 class="font-content">{{dataDurableCount.count.totalPrice.toLocaleString()}} </h1>
+                        <h2 style="color: gray; text-align: end;">บาท</h2>
+                    </mat-card-content>
+                </mat-card>
+            </mat-card>
+        </div>
+        <mat-card>
+            <mat-card-title>รายชื่อผู้รับผิดชอบ</mat-card-title>
+            <mat-card-content class="card-content">
+                <canvas id="canvas3" height="800" width="800">{{chart2}}</canvas>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

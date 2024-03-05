@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  profile = localStorage.removeItem('User_Name');
   title = 'durableAdmin';
 }

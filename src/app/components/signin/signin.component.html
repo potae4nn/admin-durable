@@ -1,0 +1,28 @@
+<section class="vh-100" style="background-color: #fff;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card shadow-2-strong" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
+
+            <h3 class="mb-5">Sign in</h3>
+            <form (submit)="loginUser()" [noValidate]="false">
+            <div class="form-outline mb-4">
+              <input [(ngModel)]="form.username" name="user_username" type="text" placeholder="Username" class="form-control form-control-lg" />
+
+            </div>
+
+            <div class="form-outline mb-4">
+              <input [(ngModel)]="form.password" name="user_password" type="password" placeholder="Password"
+                class="form-control form-control-lg" />
+            </div>
+
+            <button class="btn btn-primary btn-lg btn-block" type="submit" >Login</button>
+          </form>
+            <!-- <hr class="my-4"> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

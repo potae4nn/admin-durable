@@ -1,0 +1,27 @@
+.card {
+    margin-bottom: 50px !important;
+}
+
+.alert-danGer {
+    color: red;
+}
+
+.alert-sucCess {
+    color: green;
+}
+
+.alert-worNing {
+    color: orange;
+}
+
+.bt-form {
+    margin-bottom: 15px;
+}
+
+.al-rigth {
+    margin-left: 10%;
+}
+
+.subform{
+    margin-left: 3%;
+}
