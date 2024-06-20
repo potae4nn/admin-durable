@@ -15,6 +15,7 @@ import { FormEditDurableComponent } from './components/form-edit-durable/form-ed
 
 import { AuthGuardService as AuthGuard } from './services/auth-guard.service';
 import { RejectComponent } from './components/reject/reject.component';
+import { ReportPriceComponent } from './components/report-price/report-price.component';
 
 
 const routes: Routes = [
@@ -30,6 +31,7 @@ const routes: Routes = [
   { path: 'formEdit/:id',canActivate: [AuthGuard], component: FormEditComponent },
   { path: 'formEditDurable/:id',canActivate: [AuthGuard], component: FormEditDurableComponent },
   { path: 'reportDurable',canActivate: [AuthGuard], component: ReportDurableComponent },
+  {path: 'reportPrice',canActivate: [AuthGuard], component: ReportPriceComponent },
   { path: 'rejectDurable',canActivate: [AuthGuard], component: RejectComponent },
   { path: 'reportTable',canActivate: [AuthGuard], component: TableReportComponent },
   { path: '**', redirectTo: '' }

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PrintDurableComponent } from './print-durable.component';
+import { ReportPriceComponent } from './report-price.component';
 
-describe('PrintDurableComponent', () => {
-  let component: PrintDurableComponent;
-  let fixture: ComponentFixture<PrintDurableComponent>;
+describe('ReportPriceComponent', () => {
+  let component: ReportPriceComponent;
+  let fixture: ComponentFixture<ReportPriceComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PrintDurableComponent ]
+      declarations: [ ReportPriceComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PrintDurableComponent);
+    fixture = TestBed.createComponent(ReportPriceComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

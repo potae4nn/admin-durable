@@ -62,6 +62,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { FooterComponent } from './components/footer/footer.component';
 import { RejectComponent } from './components/reject/reject.component';
 import { ConvertYearPipe } from './pipes/convert-year.pipe';
+import { ReportPriceComponent } from './components/report-price/report-price.component';
 
 @NgModule({
   declarations: [
@@ -91,6 +92,7 @@ import { ConvertYearPipe } from './pipes/convert-year.pipe';
     FooterComponent,
     RejectComponent,
     ConvertYearPipe,
+    ReportPriceComponent,
     // FilterPipe,
   ],
   imports: [

@@ -1,43 +1,87 @@
-<div class="example-container" [class.example-is-mobile]="mobileQuery.matches" *ngIf="shouldRun">
-    <mat-toolbar color="primary" class="example-toolbar">
-      <button mat-mini-fab>
-        <mat-icon style="cursor: pointer;" (click)="snav.toggle()">dehaze</mat-icon>
-      </button>
-      <!-- <button (click)="snav.toggle()"></button> -->
-      <h1 class="example-app-name">Admin Durable SHC</h1>
-      <span class="example-spacer"></span>
-      <button routerLink="signout" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-        <mat-icon>logout</mat-icon>
-      </button>
-    </mat-toolbar>
-    <mat-sidenav-container style="height: calc(100% - 64px); margin: 0;" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
-      <mat-sidenav #snav opened mode="side" [class.mat-elevation-z4]="true" style="width: 240px" [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
-      fixedTopGap="56">
+<div
+  class="example-container"
+  [class.example-is-mobile]="mobileQuery.matches"
+  *ngIf="shouldRun"
+>
+  <mat-toolbar color="primary" class="example-toolbar">
+    <button mat-mini-fab>
+      <mat-icon style="cursor: pointer" (click)="snav.toggle()"
+        >dehaze</mat-icon
+      >
+    </button>
+    <!-- <button (click)="snav.toggle()"></button> -->
+    <h1 class="example-app-name">Admin Durable SHC</h1>
+    <span class="example-spacer"></span>
+    <button
+      routerLink="signout"
+      mat-icon-button
+      class="example-icon favorite-icon"
+      aria-label="Example icon-button with heart icon"
+    >
+      <mat-icon>logout</mat-icon>
+    </button>
+  </mat-toolbar>
+  <mat-sidenav-container
+    style="height: calc(100% - 64px); margin: 0"
+    [style.marginTop.px]="mobileQuery.matches ? 56 : 0"
+  >
+    <mat-sidenav
+      #snav
+      opened
+      mode="side"
+      [class.mat-elevation-z4]="true"
+      style="width: 240px"
+      [mode]="mobileQuery.matches ? 'over' : 'side'"
+      [fixedInViewport]="mobileQuery.matches"
+      fixedTopGap="56"
+    >
+      <mat-nav-list dense>
+        <mat-list-item routerLink="/deshboard"
+          ><mat-icon>dashboard</mat-icon>Dashboard</mat-list-item
+        >
+        <!-- <mat-list-item routerLink="product"><mat-icon>store</mat-icon>product</mat-list-item> -->
+        <!-- <mat-list-item routerLink="/reportDurable"><mat-icon>report</mat-icon>รายการครุภัณฑ์</mat-list-item> -->
+        <!-- <mat-list-item routerLink="#"><mat-icon>notification_important</mat-icon>Notification</mat-list-item> -->
+        <mat-expansion-panel [class.mat-elevation-z0]="true" dense>
+          <mat-expansion-panel-header>
+            <mat-icon>person</mat-icon>จัดการสมาชิก
+          </mat-expansion-panel-header>
           <mat-nav-list dense>
-              <mat-list-item routerLink="/deshboard"><mat-icon>dashboard</mat-icon>Dashboard</mat-list-item>
-              <!-- <mat-list-item routerLink="product"><mat-icon>store</mat-icon>product</mat-list-item> -->
-              <!-- <mat-list-item routerLink="/reportDurable"><mat-icon>report</mat-icon>รายการครุภัณฑ์</mat-list-item> -->
-              <!-- <mat-list-item routerLink="#"><mat-icon>notification_important</mat-icon>Notification</mat-list-item> -->
-              <mat-expansion-panel [class.mat-elevation-z0]="true" dense>
-                  <mat-expansion-panel-header>
-                    <mat-icon>person</mat-icon>จัดการสมาชิก
-                  </mat-expansion-panel-header>
-                  <mat-nav-list dense>
-                      <a mat-list-item routerLink="editUser"><mat-icon>people</mat-icon>รายการสมาชิก</a>
-                      <a mat-list-item routerLink="addUser"><mat-icon>person_add</mat-icon>เพิ่มสมาชิก</a>
-                  </mat-nav-list>
-              </mat-expansion-panel>
-              <mat-expansion-panel [class.mat-elevation-z0]="true" dense>
-                <mat-expansion-panel-header>
-                  <mat-icon>build</mat-icon>จัดการครุภัณฑ์
-                </mat-expansion-panel-header>
-                <mat-nav-list dense>
-                    <a mat-list-item routerLink="reportDurable"><mat-icon>bar_chart</mat-icon>รายการครุภัณฑ์</a>
-                    <a mat-list-item routerLink="rejectDurable"><mat-icon>delete_forever</mat-icon>รายการครุภัณฑ์ที่จำหน่าย</a>
-                    <a mat-list-item routerLink="addDurable"><mat-icon>control_point</mat-icon>เพิ่มครุภัณฑ์</a>
-                </mat-nav-list>
-            </mat-expansion-panel>
-              <!-- <mat-expansion-panel [class.mat-elevation-z0]="true" dense>
+            <a mat-list-item routerLink="editUser"
+              ><mat-icon>people</mat-icon>รายการสมาชิก</a
+            >
+            <a mat-list-item routerLink="addUser"
+              ><mat-icon>person_add</mat-icon>เพิ่มสมาชิก</a
+            >
+          </mat-nav-list>
+        </mat-expansion-panel>
+        <mat-expansion-panel [class.mat-elevation-z0]="true" dense>
+          <mat-expansion-panel-header>
+            <mat-icon>build</mat-icon>จัดการครุภัณฑ์
+          </mat-expansion-panel-header>
+          <mat-nav-list dense>
+            <a mat-list-item routerLink="reportDurable"
+              ><mat-icon>bar_chart</mat-icon>รายการครุภัณฑ์</a
+            >
+            <a mat-list-item routerLink="rejectDurable"
+              ><mat-icon>delete_forever</mat-icon>รายการครุภัณฑ์ที่จำหน่าย</a
+            >
+            <a mat-list-item routerLink="addDurable"
+              ><mat-icon>control_point</mat-icon>เพิ่มครุภัณฑ์</a
+            >
+          </mat-nav-list>
+        </mat-expansion-panel>
+        <mat-expansion-panel [class.mat-elevation-z0]="true" dense>
+          <mat-expansion-panel-header>
+            <mat-icon>pie_chart</mat-icon>รายงาน
+          </mat-expansion-panel-header>
+          <mat-nav-list dense>
+            <a mat-list-item routerLink="reportPrice"
+              ><mat-icon>bar_chart</mat-icon>รายงานครุภัณฑ์(งบประมาณประจำปี)</a
+            >
+          </mat-nav-list>
+        </mat-expansion-panel>
+        <!-- <mat-expansion-panel [class.mat-elevation-z0]="true" dense>
                   <mat-expansion-panel-header>
                       Privacy
                   </mat-expansion-panel-header>
@@ -46,19 +90,19 @@
                       <a mat-list-item routerLink="#"><mat-icon>visibility</mat-icon>Profile Visibility</a>
                   </mat-nav-list>
               </mat-expansion-panel> -->
-          </mat-nav-list>
-      </mat-sidenav>
-      <mat-sidenav-content>
-          <router-outlet></router-outlet>
-          <app-footer></app-footer>
-      </mat-sidenav-content>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+      <app-footer></app-footer>
+    </mat-sidenav-content>
   </mat-sidenav-container>
-    <!-- <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+  <!-- <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
       <mat-sidenav opened #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
         fixedTopGap="56">
         <mat-nav-list style="width: 18.5em;">
            <a mat-list-item routerLink="." *ngFor="let nav of fillerNav">{{nav}}</a> -->
-          <!-- <a mat-list-item routerLink="dashboard">
+  <!-- <a mat-list-item routerLink="dashboard">
             <mat-icon>dashboard</mat-icon> dashboard
           </a>
         </mat-nav-list>
@@ -66,7 +110,7 @@
   
       <mat-sidenav-content>
         <router-outlet></router-outlet> -->
-        <!-- <p *ngFor="let content of fillerContent">{{content}}</p> -->
-      <!-- </mat-sidenav-content>
+  <!-- <p *ngFor="let content of fillerContent">{{content}}</p> -->
+  <!-- </mat-sidenav-content>
     </mat-sidenav-container> -->
-  </div> 
+</div>
